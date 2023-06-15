@@ -143,5 +143,45 @@ class AncastralStories {
 
   let nigerianRecipe = new NigerianRecipe('Tortillas', ['Baking powder', 'water', 'salt'], '3 hours', 'Put in the oven');
   tanzaniaRecipe.showcaseRecipe();
+
+
+//   **Wildlife Preservation:** You're a wildlife conservationist working on a
+//   program to track different species in a national park. Each species has its own
+//   characteristics and behaviors, such as its diet, typical lifespan, migration
+//   patterns, etc. Some species might be predators, others prey. You'll need to
+  
+//   create classes to model `Species`, `Predator`, `Prey`, etc., and think about how
+//   these classes might relate to each other through inheritance.
+
+  class Species {
+    constructor(name, diet, typicalLifespan,migrationPatterns) {
+      this.name = name;
+      this.diet = diet;
+      this.typicalLifespan = typicalLifespan;
+      this.migrationPatterns = migrationPatterns
+    }
+  }
+  
+  class Predator extends Species {
+    constructor(name, diet, typical_lifespan, hunting_method) {
+      super(name, diet, typical_lifespan);
+      this.hunting_method = hunting_method;
+    }
+  }
+  
+  class Prey extends Species {
+    constructor(name, diet, typical_lifespan, migration_patterns) {
+      super(name, diet, typical_lifespan);
+      this.migration_patterns = migration_patterns;
+    }
+  }
+  
+  const leopard = new Predator("Lion", "Carnivore", 5, "Fast hunting");
+  const gazelle = new Prey("Zebra", "Herbivore", 15, "Seasonal migration");
+  
+  console.log(leopard.name);  
+  console.log(gazelle.typical_lifespan);  
+  console.log(leopard.hunting_method);  
+  console.log(gazelle.migration_patterns); 
   
   

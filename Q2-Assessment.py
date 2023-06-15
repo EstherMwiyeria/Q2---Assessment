@@ -127,3 +127,41 @@ class NigerianRecipe(Recipe):
 
 
 
+
+# **Wildlife Preservation:** You're a wildlife conservationist working on a
+# program to track different species in a national park. Each species has its own
+# characteristics and behaviors, such as its diet, typical lifespan, migration
+# patterns, etc. Some species might be predators, others prey. You'll need to
+
+# create classes to model `Species`, `Predator`, `Prey`, etc., and think about how
+# these classes might relate to each other through inheritance.
+
+class Species:
+    def __init__(self, name, diet, typical_lifespan,migrationPatterns):
+        self.name = name
+        self.diet = diet
+        self.typical_lifespan = typical_lifespan
+        self.migrationPatterns = migrationPatterns
+
+
+class Predator(Species):
+    def __init__(self, name, diet, typical_lifespan, hunting_method):
+        super().__init__(name, diet, typical_lifespan)
+        self.hunting_method = hunting_method
+
+
+class Prey(Species):
+    def __init__(self, name, diet, typical_lifespan, migration_patterns):
+        super().__init__(name, diet, typical_lifespan)
+        self.migration_patterns = migration_patterns
+
+
+
+leopard = Predator("Lion", "Carnivore", 5, "Fast hunting")
+gazelle = Prey("Zebra", "Herbivore", 15, "Seasonal migration")
+
+print(leopard.name) 
+print(gazelle.typical_lifespan)  
+print(leopard.hunting_method) 
+print(gazelle.migration_patterns)
+
